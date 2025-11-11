@@ -1,0 +1,1 @@
+{"version":"4.0.18","results":[["handloom-ui:src/app/common/alert-component/alert-component.spec.ts",{"duration":37.72083399999997,"failed":false}],["handloom-ui:src/app/app.spec.ts",{"duration":19.28037500000005,"failed":true}],["handloom-ui:src/app/login/login-component/login-component.spec.ts",{"duration":52.40437500000007,"failed":false}]]}
