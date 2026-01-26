@@ -1,0 +1,38 @@
+<div class="page-center">
+    <div class="container">
+        <div>
+            <h2 class="login-center">Login</h2>
+        </div>
+        <div class="form-fields">
+            <div class="text-align">
+                <p-inputgroup>
+                    <p-inputgroup-addon>
+                        <i class="pi pi-user"></i>
+                    </p-inputgroup-addon>
+                    <input pInputText [(ngModel)]="emailId" placeholder="Email Id" required="true" />
+                </p-inputgroup>
+            </div>
+             
+            <div class="text-align">
+                <p-inputgroup>
+                    <p-inputgroup-addon>
+                    <i class="pi pi-key" style="font-size: 1.2rem"></i>
+                    </p-inputgroup-addon>
+                    <p-password [(ngModel)]="password" placeholder="Password" [toggleMask]="true" [feedback]="false" required/>
+                </p-inputgroup>
+                
+            </div>
+        
+            
+        </div>
+        <div class="button-align">
+                <p-button label="Login" severity="secondary" (onClick)="login()"/>
+        </div>
+        <div style="text-align: center;"> 
+            <span >need to sign up ! Please <a  href="/sign-up"> signup</a></span>
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</div>
