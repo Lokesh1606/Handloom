@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AlertComponent } from '../../common/alert-component/alert-component';
 import * as CryptoJS from 'crypto-js';
 import { ApiConfig } from '../../config/ApiConfig';
@@ -27,7 +27,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private api: ApiCall
+    private api: ApiCall,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -88,12 +89,11 @@ export class SignupComponent implements OnInit {
     this.password.disable();
     this.confirmPassword.disable();
 
-    const hashedPassword = CryptoJS.SHA256(this.password.value!).toString();
     
     const signupData = {
       email: this.email.value!,
       username: this.username.value!,
-      password: hashedPassword,
+      password: this.password.value!,
     };
 
     console.log('Signup data:', signupData);
@@ -102,6 +102,9 @@ export class SignupComponent implements OnInit {
       next: (response) => {
         if (response.message) {
           this.showAlert(response.message);
+          this.isLoading = false;
+          // Assuming success, navigate to login
+          this.router.navigate(['/login']);
         }
         this.resetForm();
       },
@@ -109,6 +112,7 @@ export class SignupComponent implements OnInit {
         const backendMessage = error?.error?.message || 'Signup failed. Please try again.';
         this.showAlert(backendMessage);
         this.enableFields();
+        this.isLoading = false;
       },
       complete: () => {
         this.isLoading = false;

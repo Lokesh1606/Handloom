@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoginSubmit } from '../../model/login';
 import { ApiConfig } from '../../config/ApiConfig';
 import { ApiCall } from '../../config/ApiCall';
@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit{
 
   constructor(
     private fb : FormBuilder,
-    private api : ApiCall
+    private api : ApiCall,
+    private router: Router
   ){
     this.loginSubmit = new LoginSubmit();
   }
@@ -73,8 +74,8 @@ export class LoginComponent implements OnInit{
     // Hash password before sending (SHA-256)
 
 
-    const hashedPassword = encrypt(this.password);
-    this.loginSubmit.password = hashedPassword;
+    // const hashedPassword = encrypt(this.password);
+    this.loginSubmit.password = this.password.value!;
     this.api.loginSubmit(this.loginSubmit).subscribe({
       next: (response) => {
         console.log(response);
@@ -87,6 +88,7 @@ export class LoginComponent implements OnInit{
           // Navigate to dashboard or home
           // this.router.navigate(['/dashboard']);
         }
+        this.router.navigate(['/dashboard']);
         this.isLoading = false;
         this.emailid.enable();
         this.password.enable();

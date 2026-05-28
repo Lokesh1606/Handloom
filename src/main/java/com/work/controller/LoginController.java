@@ -29,7 +29,7 @@ public class LoginController {
         return loginService.validateUser(loginRequest);
     }
 
-    @PostMapping("/signUp")
+    @PostMapping("/signup")
     public String signUp(@RequestBody LoginRequest loginRequest){
         return loginService.createUser(loginRequest);
     }

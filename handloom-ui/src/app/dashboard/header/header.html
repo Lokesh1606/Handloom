@@ -1,0 +1,15 @@
+<div>
+    <div class="header-container">
+        <div class="logo">
+            <h3>The Weaver</h3>
+        </div>
+        <div class ="nav-side-bar">
+            <ul class="nav-links">
+                @for(item of links; track item.name) {
+                    <li><a [routerLink]="item.path">{{item.name}}</a></li>
+                }
+            </ul>
+        </div>
+        
+    </div>
+</div>

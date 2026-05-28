@@ -1,22 +1,18 @@
 package com.work;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+import com.work.config.SymmetricAlgo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.util.Arrays;
 
 @EnableAspectJAutoProxy
 @SpringBootApplication
 public class HandloomsApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(HandloomsApplication.class, args);
+//        System.out.println(SymmetricAlgo.encrypt("LOKESH@2108"));
+//        System.out.println(SymmetricAlgo.decrypt("tSTj/E+A5tIKm3EKTdUbHQ=="));
 	}
 
     /*@Bean

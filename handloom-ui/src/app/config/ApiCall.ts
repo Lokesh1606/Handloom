@@ -21,7 +21,7 @@ export class ApiCall {
     }
 
     signup(signupData: { email: string; username: string; password: string }): Observable<any> {
-        return this.post('/auth/signup', signupData);
+        return this.api.post(ApiConfig.signup, signupData);
     }
 
     // Generic GET method
