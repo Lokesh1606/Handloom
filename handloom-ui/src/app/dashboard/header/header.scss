@@ -4,26 +4,34 @@
   align-items: center;
   padding: 0 20px;
   height: 60px;
-  background-color: #fff; /* Light gray background */
+  background-color: #fff;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px; /* Space between links */
+  gap: 20px;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links .cart-button {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   transition: color 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
 }
-.nav-links a:hover {
-  color: #96b3b2; /* Change to your desired hover color */
+
+.nav-links a:hover,
+.nav-links .cart-button:hover {
+  color: #96b3b2;
 }
 
 .nav-side-bar{
     display: flex;
-    gap: 20px; /* Space between links */
+    gap: 20px;
 }

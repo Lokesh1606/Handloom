@@ -6,7 +6,14 @@
         <div class ="nav-side-bar">
             <ul class="nav-links">
                 @for(item of links; track item.name) {
-                    <li><a [routerLink]="item.path">{{item.name}}</a></li>
+                    <li>
+                        <a *ngIf="item.name !== 'My Cart'" [routerLink]="item.path">
+                            {{item.name}}
+                        </a>
+                        <button *ngIf="item.name === 'My Cart'" type="button" class="cart-button" (click)="handleLink(item)">
+                            {{item.name}}
+                        </button>
+                    </li>
                 }
             </ul>
         </div>
