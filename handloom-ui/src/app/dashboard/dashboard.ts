@@ -7,7 +7,7 @@ import { Mycard } from '../cart/mycard/mycard';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [NgIf, Header, Profile, Main, Mycard],
+  imports: [ Header, Main, Mycard],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
