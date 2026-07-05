@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body,
+:root {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background: #fbfbf4;
+  color: #222;
+  overflow: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  display: none;
+}

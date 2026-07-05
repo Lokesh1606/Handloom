@@ -1,0 +1,25 @@
+<div>
+    <div class="header-container">
+        <div class="logo">
+            <h3>The Weaver</h3>
+        </div>
+        <div class ="nav-side-bar">
+            <ul class="nav-links">
+                @for(item of links; track item.name) {
+                    <li>
+                        @if (item.name !== 'My Cart') {
+                            <a [routerLink]="item.path">
+                                {{item.name}}
+                            </a>
+                        } @else {
+                            <button type="button" class="cart-button" (click)="handleLink(item)">
+                                {{item.name}}
+                            </button>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+        
+    </div>
+</div>

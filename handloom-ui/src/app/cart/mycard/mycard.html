@@ -1,0 +1,13 @@
+
+<div class="cart-card">
+    <header class="cart-header">
+        <h1>My Cart</h1>
+    </header>
+    <div>
+        @for (itemSignal of cartItems; track itemSignal.id) {
+            <app-items [item]="itemSignal"></app-items>
+        }@empty {
+            <p>Your cart is empty</p>
+        }
+    </div>
+</div>

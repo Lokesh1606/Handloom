@@ -1,0 +1,13 @@
+<div>
+    <div>
+        <img [src]="item().image" [alt]="item().name" class="item-image">
+        <div>
+            <h3>Item Name : {{ item().name }}</h3>
+            <p>Quantity: {{ item().quantity }}</p>
+            <p>Price: {{ item().price }}</p>
+        </div>
+        <div>
+            <span>Total: {{ item().price * item().quantity  }}</span>
+        </div>
+    </div>
+</div>

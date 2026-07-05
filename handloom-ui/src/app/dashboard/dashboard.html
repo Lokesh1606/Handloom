@@ -1,0 +1,25 @@
+
+<div>
+    <div>
+        <app-header (cartClick)="openCart()"></app-header>
+    </div>
+    <div class="app-container">
+        <!-- <app-profile></app-profile> -->
+
+        <main class="content">
+            <app-main></app-main>
+        </main>
+        <!-- <app-order></app-order> -->
+    </div>
+    @if(showCart) {       
+        <div class="cart-modal-backdrop"  (click)="closeCart()">
+            <section class="cart-modal" (click)="$event.stopPropagation()">
+                <button class="cart-modal-close" type="button" aria-label="Close cart" (click)="closeCart()">×</button>
+                <app-mycard></app-mycard>
+            </section>
+        </div>
+    }
+    
+</div>
+
+
