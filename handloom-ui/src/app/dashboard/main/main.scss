@@ -1,0 +1,17 @@
+
+.container{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    position: relative;
+    // margin-top: 5vh;              
+    background: #ffffff;
+    padding: 20px;
+}
+.fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1; 
+}

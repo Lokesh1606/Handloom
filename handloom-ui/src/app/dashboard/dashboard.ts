@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Header } from './header/header';
-import { Profile } from './profile/profile';
 import { Main } from "./main/main";
 import { Mycard } from '../cart/mycard/mycard';
 
